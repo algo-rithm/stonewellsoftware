@@ -5,6 +5,16 @@ const AutoLoad = require('fastify-autoload')
 
 module.exports = function (fastify, opts, next) {
   // Place here your custom code!
+  fastify.register(require('fastify-mongodb'), {
+    forceClose: true,
+    url: 'mongodb://localhost:27017/stonewellsoftware'
+  })
+
+  fastify.register(require('point-of-view'), {
+    engine: {
+      pug: require('pug')
+    }
+  })
 
   // Do not touch the following lines
 

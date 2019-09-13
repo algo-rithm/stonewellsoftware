@@ -33,7 +33,7 @@ module.exports = function (fastify, opts, next) {
     handler: ctrlUsers.helloWorld
   }
 
-  fastify.get('/', options)
+  fastify.get('/users', options)
 
   next()
 }
