@@ -15,7 +15,7 @@
 //     return { root: true }
 //   })
 // }
-const ctrlUsers = require('../controllers/users');
+const ctrlUsers = require('../../app-public/src/app/app.component');
 
 
 module.exports = function (fastify, opts, next) {

@@ -8,8 +8,10 @@
   },
   "scripts": {
     "test": "tap app_server/test/**/*.test.js",
-    "start": "fastify start -l info app_server/fast_server.js ",
-    "dev": "fastify start -l info -P app_server/fast_server.js"
+
+    "start": "node_modules/.bin/concurrently --kill-others \"npm run server:run\" \"cd ./app-public && ng serve\"",
+    "dev": "fastify start -l info -P app_server/fast_server.js",
+    "server:run": "fastify start -l info app_server/fast_server.js"
   },
   "engines": {
     "node": ">=11.0.0",
@@ -19,11 +21,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^4.1.2",
     "fastify": "^2.0.0",
     "fastify-autoload": "^1.0.0",
     "fastify-cli": "^1.2.0",
     "fastify-mongodb": "^2.0.0",
     "fastify-plugin": "^1.5.0",
+    "fastify-static": "^2.5.0",
     "point-of-view": "^3.5.0",
     "pug": "^2.0.4"
   },
