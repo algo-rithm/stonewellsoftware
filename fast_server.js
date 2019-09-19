@@ -19,20 +19,30 @@ module.exports = function (fastify, opts, next) {
     }
   })
 
+  // fastify.register(require('fastify-static'), {
+  //   root: path.join(__dirname, 'public')
+  // })
+
+  fastify.register(require('fastify-static'), {
+    root: path.join(__dirname, 'app_public', 'build')
+  })
+
+
+
   // Do not touch the following lines
 
   // This loads all plugins defined in plugins
   // those should be support plugins that are reused
   // through your application
   fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'plugins'),
+    dir: path.join(__dirname, 'app_server/plugins'),
     options: Object.assign({}, opts)
   })
 
   // This loads all plugins defined in services
   // define your routes in one of these
   fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'services'),
+    dir: path.join(__dirname, 'app_server/services'),
     options: Object.assign({}, opts)
   })
 

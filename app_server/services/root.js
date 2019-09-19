@@ -15,25 +15,27 @@
 //     return { root: true }
 //   })
 // }
-const ctrlUsers = require('../../app-public/src/app/app.component');
+// const ctrlUsers = require('../controllers/users');
+//
+//
+ module.exports = function (fastify, opts, next) {
+//   const options = {
+//     schema: {
+//       response: {
+//         200: {
+//           type: 'object',
+//           properties: {
+//             hello: {type: 'string' }
+//           }
+//         }
+//       }
+//     },
+//     handler: ctrlUsers.helloWorld
+//   }
 
-
-module.exports = function (fastify, opts, next) {
-  const options = {
-    schema: {
-      response: {
-        200: {
-          type: 'object',
-          properties: {
-            hello: {type: 'string' }
-          }
-        }
-      }
-    },
-    handler: ctrlUsers.helloWorld
-  }
-
-  fastify.get('/', options)
+  fastify.get('/', function (req, rep) {
+    rep.sendFile('index.html')
+  })
 
   next()
 }

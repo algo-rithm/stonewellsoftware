@@ -2,16 +2,16 @@
   "name": "stonewellsoftware",
   "version": "1.0.0",
   "description": "",
-  "main": "app_server/fast_server.js",
+  "main": "fast_server.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "tap app_server/test/**/*.test.js",
-
-    "start": "node_modules/.bin/concurrently --kill-others \"npm run server:run\" \"cd ./app-public && ng serve\"",
-    "dev": "fastify start -l info -P app_server/fast_server.js",
-    "server:run": "fastify start -l info app_server/fast_server.js"
+    "start": "npm run server:run",
+    "dev": "fastify start -l info -P fast_server.js",
+    "server:run": "fastify start -l info fast_server.js",
+    "oldstart": "node_modules/.bin/concurrently --kill-others \"npm run server:run\" \"cd ./app_public && ng serve\""
   },
   "engines": {
     "node": ">=11.0.0",
