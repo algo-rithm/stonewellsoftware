@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+module.exports = function (fastify, opts, next) {
+
+
+  fastify.listen((process.env.PORT || '3000'), '127.0.0.1')
+    .then((address) => console.log(`server listening on ${address}`))
+    .catch(err => {
+      console.log('Error starting server:', err)
+      process.exit(1)
+    })
+
+
+  next()
+}

@@ -18,7 +18,7 @@
 // const ctrlUsers = require('../controllers/users');
 //
 //
- module.exports = function (fastify, opts, next) {
+ module.exports = async function (fastify, opts, next) {
 //   const options = {
 //     schema: {
 //       response: {
@@ -33,7 +33,7 @@
 //     handler: ctrlUsers.helloWorld
 //   }
 
-  fastify.get('/', function (req, rep) {
+  fastify.get('/', async function (req, rep) {
     rep.sendFile('index.html')
   })
 
