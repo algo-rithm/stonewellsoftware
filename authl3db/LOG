@@ -1,0 +1,5 @@
+2019/09/20-18:19:10.663 20ec Recovering log #13
+2019/09/20-18:19:10.663 20ec Level-0 table #15: started
+2019/09/20-18:19:10.686 20ec Level-0 table #15: 188 bytes OK
+2019/09/20-18:19:10.698 20ec Delete type=0 #13
+2019/09/20-18:19:10.698 20ec Delete type=3 #11

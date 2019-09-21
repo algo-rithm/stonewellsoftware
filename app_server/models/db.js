@@ -7,3 +7,5 @@ module.exports = fp(function (fastify, opts, next) {
   })
   next()
 })
+
+require('./users');

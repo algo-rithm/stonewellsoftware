@@ -12,8 +12,8 @@ module.exports = function (fastify, opts, next) {
     url: 'mongodb://localhost:27017/stonewellsoftware'
   })
 
-  // fastify.register(require('fastify-jwt', { secret: 'supersecret' }))
-  fastify.register(require('fastify-leveldb'), { name: 'authldb' })
+  fastify.register(require('fastify-jwt'), { secret: 'supersecret' })
+  fastify.register(require('fastify-leveldb'), { name: 'authl3db' })
   fastify.register(require('fastify-auth'))
 
   //Enable PUG Javascript Rendering Engine
@@ -37,6 +37,7 @@ module.exports = function (fastify, opts, next) {
   })
 
   fastify.register(require('./app_server/api_routes/v1/users'), { prefix: '/v1' })
+  fastify.register(require('./app_server/api_routes/v1/animals'), { prefix: '/v1' })
   fastify.register(require('./app_server/api_routes/v2/users'), { prefix: '/v2' })
 
   // Make sure to call next when done
