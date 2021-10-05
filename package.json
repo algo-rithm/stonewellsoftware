@@ -31,7 +31,7 @@
     "fastify-leveldb": "^2.1.0",
     "fastify-mongodb": "^2.0.0",
     "fastify-plugin": "^1.5.0",
-    "fastify-static": "^2.5.0",
+    "fastify-static": "^4.2.4",
     "point-of-view": "^3.5.0",
     "pug": "^2.0.4"
   },
